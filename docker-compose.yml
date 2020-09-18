@@ -9,14 +9,14 @@ services:
     environment: ['WEB_DOCUMENT_ROOT=/var/www', 'WEB_DOCUMENT_INDEX=/var/www/index.php', 'PHP_IDE_CONFIG=serverName=hiring', 'PHP_DEBUGGER=xdebug', 'XDEBUG_REMOTE_AUTOSTART=1', 'XDEBUG_REMOTE_ENABLE=1', 'XDEBUG_REMOTE_CONNECT_BACK=0', 'XDEBUG_REMOTE_HOST=192.168.1.108', 'XDEBUG_REMOTE_PORT=9000', 'XDEBUG_IDEKEY=PHPSTORM', 'PM_MAX_REQUESTS=500']
     networks:
       - default
-    expose:
-      - '80'
-    labels:
-      - traefik.http.routers.hiring.rule=Host(`hiring.app.com`)
-      - traefik.docker.network=default
-      - traefik.enable=true
-      - traefik.port=80
-      - traefik.default.protocol=http
+    ports:
+      - '8085:80'
+#    labels:
+#      - traefik.http.routers.hiring.rule=Host(`hiring.app.com`)
+#      - traefik.docker.network=summit
+#      - traefik.enable=true
+#      - traefik.port=80
+#      - traefik.default.protocol=http
 
   db:
     container_name: db
@@ -28,3 +28,7 @@ services:
       - '3307:3306'
     networks:
       - default
+
+#networks:
+#  summit:
+#    external: true

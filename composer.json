@@ -1,0 +1,16 @@
+{
+    "name": "tom/legacy_hiring_app-master",
+    "description": "testing app",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomas Flandera",
+            "email": "flandera@volny.cz"
+        }
+    ],
+    "require": {
+        "symfony/orm-pack": "^2.0",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
